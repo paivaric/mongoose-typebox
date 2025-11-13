@@ -104,7 +104,7 @@ function getPrimitiveType(entry: TSchema) {
   const type: string = entry.type;
 
   if (entry.mongoose?.ref) {
-    return mongoose.Types.ObjectId;
+    return entry.mongoose?.type || mongoose.Types.ObjectId;
   }
 
   if (
